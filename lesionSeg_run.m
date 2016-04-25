@@ -48,9 +48,9 @@ function lesionSeg_run(job)
         im2write.img=segmTissues;
         save_untouch_nii(im2write, [pthT1, '/spmSegmTissues.nii']);
         
-        if(job.exclusion.ventricles)
-            deformBack(pthT1, ['/iy_r' namT1 '.nii'], 'ventricles.nii');
-        end
+        
+        deformBack(pthT1, ['/iy_r' namT1 '.nii'], 'ventricles.nii');
+        
             
         %Clean up tissue segmentation files
         if (job.outputs.cleanup)

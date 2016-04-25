@@ -44,6 +44,6 @@ function deformBack(path, defField, structure)
     clear matlabbatch;
     
     %system(['mv ' [spm('dir'),'/toolbox/SLS/structures/w' structure ' '] path '/w' structure ' ']);
-    movefile(['w' structure], [spm('dir'),'/toolbox/SLS/structures/w' structure]);
+    movefile(['w' structure], [path '/w' structure]);
 
 end
