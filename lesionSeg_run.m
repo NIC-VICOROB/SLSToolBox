@@ -132,9 +132,9 @@ function lesionSeg_run(job)
     lesion_mask=lesion_mask1;
     lesion_mask(lesion_mask2==1)=1;
     
-    T1image.img=lesion_mask;
+    im2write.img=lesion_mask;
     
-    save_untouch_nii(T1image, [pthFLAIR, '/segmLesions.nii']);
+    save_untouch_nii(im2write, [pthFLAIR, '/segmLesions.nii']);
 	
     
     fprintf('Lesion segmentation on volume %s done!\n\n', FLAIR);
@@ -142,23 +142,23 @@ function lesionSeg_run(job)
     %% Clean up temporary files
    
     if (job.outputs.lesionMaskst)
-        T1image.img=lesion_mask1;
-        save_untouch_nii(T1image, [pthFLAIR, '/segmLesions.iter1.nii']);
+        im2write.img=lesion_mask1;
+        save_untouch_nii(im2write, [pthFLAIR, '/segmLesions.iter1.nii']);
     end
     
     if (job.outputs.lesionMasknd)
-        T1image.img=lesion_mask2;
-        save_untouch_nii(T1image, [pthFLAIR, '/segmLesions.iter2.nii']);
+        im2write.img=lesion_mask2;
+        save_untouch_nii(im2write, [pthFLAIR, '/segmLesions.iter2.nii']);
     end
     
      if (job.outputs.thrst)         
-         T1image.img=thr1;
-         save_untouch_nii(T1image, [pthFLAIR, '/thr.iter1.nii']);
+         im2write.img=thr1;
+         save_untouch_nii(im2write, [pthFLAIR, '/thr.iter1.nii']);
      end
      
      if (job.outputs.thrnd)
-         T1image.img=thr2;
-         save_untouch_nii(T1image, [pthFLAIR, '/thr.iter2.nii']);
+         im2write.img=thr2;
+         save_untouch_nii(im2write, [pthFLAIR, '/thr.iter2.nii']);
      end
 
      
