@@ -44,7 +44,7 @@ function lesionSeg_run(job)
     if(max(T1image.img(:))>3)
         
         coreg(FLAIR, pthT1, [namT1, extT1]);
-        [segmTissues, brainMask]=tissueSegment(pthT1, ['r' namT1]);
+        [segmTissues, brainMask]=tissueSegment(pthT1, ['r' namT1, extT1]);
         im2write.img=segmTissues;
         save_untouch_nii(im2write, [pthT1, '/spmSegmTissues.nii']);
         

@@ -39,7 +39,7 @@ function [segmTissue, brainMask]=tissueSegment(input_folder, input_volume)
 
 	spm_jobman('initcfg');
 
-	matlabbatch{1}.spm.(p_tools).(p_preproc).channel.vols = {[input_folder '/' input_volume '.nii']};
+	matlabbatch{1}.spm.(p_tools).(p_preproc).channel.vols = {[input_folder '/' input_volume]};
 	matlabbatch{1}.spm.(p_tools).(p_preproc).channel.biasreg = 0.0001;
 	matlabbatch{1}.spm.(p_tools).(p_preproc).channel.biasfwhm = 60;
 	matlabbatch{1}.spm.(p_tools).(p_preproc).channel.write = [0 0];
@@ -76,9 +76,9 @@ function [segmTissue, brainMask]=tissueSegment(input_folder, input_volume)
     clear matlabbatch;
     
     %Masking the probability maps
-    c1 = load_untouch_nii([input_folder, '/c1', input_volume, '.nii']);
-    c2 = load_untouch_nii([input_folder, '/c2', input_volume, '.nii']);
-    c3 = load_untouch_nii([input_folder, '/c3', input_volume, '.nii']);
+    c1 = load_untouch_nii([input_folder, '/c1', input_volume]);
+    c2 = load_untouch_nii([input_folder, '/c2', input_volume]);
+    c3 = load_untouch_nii([input_folder, '/c3', input_volume]);
     
     c1.hdr.dime.scl_slope=1;
     c2.hdr.dime.scl_slope=1;
