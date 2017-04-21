@@ -20,7 +20,7 @@ function SLS
 
 
 
-addpath(fullfile(spm('dir'),'toolbox','SLS'));
+addpath(genpath(fullfile(spm('dir'),'toolbox','SLS')));
 
 
 SPMid = spm('FnBanner',mfilename,'1.2.3');

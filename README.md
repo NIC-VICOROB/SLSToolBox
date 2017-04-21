@@ -1,6 +1,5 @@
 # SLS (SALEM Lesion Segmentation)
 
-
 SALEM-LS (SLS) is a new algorithm designed to segment WM lesions on MRI FLAIR images. This tool requires either the original T1 weighted image or its tissue segmentation. If the T1 weighted images is found as an input, we firstly co-register T1w image to the FLAIR image. Henceforth all the analysis is performed in this space. We segment the tissues on T1w image, and pre-process the FLAIR image (noise reduction, intensity correction and normalization). Afterwards, the WM lesions are segmented as outliers of the GM distribution. Finally the outliers detected are the potential lesion candidates wich will be filtered by lesion size and contextual information (tissue type and neighbourhood tissue type). Another restriction can be applied consisting of avoiding elongated regions attached to the ventricles. The outlier detection is performed in two steps, firstly we obtain the bigger lesions allowing the more permissive filter. In the second step we apply these filters more conservatively while looking for small lesions. All those parameters can be tunned in order to get a better accuracy, although a set of default values is given.
 
 

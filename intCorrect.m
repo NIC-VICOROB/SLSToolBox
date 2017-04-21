@@ -20,9 +20,6 @@ function outImage=intCorrect(image, mask)
 %   $Revision: 2.1$     $Date: 27/03/16$ 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
     
-    addpath('image_enhancement/');
-    addpath('image_enhancement/iic-1.0.3/');
-    
     im=load_untouch_nii(image);
     
     %Perona and Malik
